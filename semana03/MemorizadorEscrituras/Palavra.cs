@@ -23,7 +23,21 @@ public class Palavra
     {
         if (_oculta)
         {
-            return new string('_', _texto.Length);
+            string resultado = "";
+
+            foreach (char caractere in _texto)
+            {
+                if (char.IsLetter(caractere))
+                {
+                    resultado += "_";
+                }
+                else
+                {
+                    resultado += caractere;
+                }
+            }
+
+            return resultado;
         }
 
         return _texto;
